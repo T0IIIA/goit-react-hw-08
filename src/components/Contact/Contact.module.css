@@ -1,0 +1,46 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 3px;
+  width: 240px;
+}
+
+.user_icon {
+  color: rgb(68, 67, 52);
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.phoneNumber, .name {
+  display: flex;
+  gap: 3px;
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  width: 140px;
+  word-break: break-word;
+}
+
+.phone_icon {
+  color: green;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.deleteBtn {
+  border-radius: 3px;
+  border: 1px solid rgb(193, 191, 191);
+  height: 25px;
+  background-color: #e2e2e2;
+  margin: auto 0;
+  
+    &:hover {
+      background-color: #c4c4c4;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}

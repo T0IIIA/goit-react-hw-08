@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 16px;
+  max-width: 255px;
+  width: 100%;
+}
+
+.input {
+  padding: 2px 6px;
+  border-radius: 2px;
+  border: 1px solid black;
+
+    &::placeholder{
+      color: rgb(205, 201, 201);
+      font-size: 12px;
+    }
+
+}
+

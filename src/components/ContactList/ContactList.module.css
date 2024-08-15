@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 2px;
+  border: 1px solid rgb(128, 127, 127);;
+  background-color: rgb(218, 217, 217);
+  padding: 15px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 8px;
+  max-width: 220px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.stub {
+  margin: 0 auto;
+  font-size: 18px;
+}
