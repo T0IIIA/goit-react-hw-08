@@ -1,34 +1,45 @@
 import s from './App.module.css'
-import ContactForm from './ContactForm/ContactForm'
-import SearchBox from './SearchBox/SearchBox'
-import ContactList from './ContactList/ContactList'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchContacts } from '../redux/contactsOps'
-import { useEffect } from 'react'
-import { selectError, selectLoading } from '../redux/selectors'
-
+import { Route, Routes } from 'react-router-dom'
+import Layout from './Layout.jsx'
+import HomePage from '../pages/HomePage/HomePage.jsx'
+import RegistrationPage from '../pages/RegistrationPage/RegistrationPage.jsx'
+import LoginPage from '../pages/LoginPage/LoginPage.jsx'
+import ContactsPage from '../pages/ContactsPage/ContactsPage.jsx'
+import RestrictedRoute from '../Routes/RestrictedRoute.jsx'
 
 const App = () => {
-  const loading = useSelector(selectLoading)
-  const error = useSelector(selectError)
-  const dispatch = useDispatch()
-  
 
-  useEffect(() => {
-    dispatch(fetchContacts())
-  }, [dispatch])
 
   return (
-    <div className={s.container}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      {loading && <h2>Loading...please wait</h2>}
-      {error && <h2>Oops...something went wrong!</h2>}
-      <ContactList />
-    </div>
-  )
+    <>
 
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+
+        <Route path='/contacts' element={<ContactsPage />} />
+
+        <Route
+          path='/login'
+          element={
+            <RestrictedRoute>
+              <LoginPage />
+            </RestrictedRoute>
+          }
+        />
+
+        <Route
+          path='/register'
+          element={
+            <RestrictedRoute>
+              <RegistrationPage />
+            </RestrictedRoute>
+          }
+        />
+      </Routes>
+    </>
+  )
 }
 
 export default App
