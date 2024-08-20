@@ -1,0 +1,16 @@
+.container {
+display: flex;
+gap: 15px;
+}
+
+.link {
+  font-size: 16px;
+  padding: 15px 5px;
+  transition: all ease 0.1s;
+
+  &:hover{
+    color: rgba(204, 240, 204, 0.685);
+  }
+
+
+}

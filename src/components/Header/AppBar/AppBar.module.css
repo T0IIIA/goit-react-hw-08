@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  gap: 15px;
+  background-color: rgb(128, 127, 127);
+  color: #ffffff;
+  letter-spacing: 0.075em;
+  justify-content: space-between;
+  padding: 0 15px;
+}

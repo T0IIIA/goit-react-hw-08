@@ -1,0 +1,13 @@
+.container {
+  padding: 15px;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+}
+
+.screen{
+  border-radius: 5px;
+  border: 2px solid black;
+}

@@ -1,9 +1,9 @@
 import s from './ContactsPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import ContactForm from '../../components/ContactForm/ContactForm'
-import SearchBox from '../../components/Contacts/SearchBox/SearchBox'
-import ContactList from '../../components/ContactList/ContactList'
+import ContactForm from '../../components/PhoneBook/ContactForm/ContactForm'
+import SearchBox from '../../components/PhoneBook/SearchBox/SearchBox'
+import ContactList from '../../components/PhoneBook/ContactList/ContactList'
 import { fetchContacts } from '../../redux/contacts/operations'
 import { selectError, selectLoading } from '../../redux/contacts/selectors'
 
