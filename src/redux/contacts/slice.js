@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit"
-import { addContact, deleteContact, fetchContacts } from "../contacts/operations"
+import { addContact, deleteContact, fetchContacts, updateContact } from "../contacts/operations"
+import { logoutThunk } from "../auth/operations"
 
 const initialState = {
   contacts: {
@@ -25,18 +26,31 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.contacts.items = state.contacts.items.filter((item) => item.id !== action.payload)
       })
+      .addCase(logoutThunk.fulfilled, () => {
+        return initialState
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        state.contacts.items = action.payload
+      })
 
-      .addMatcher(isAnyOf(fetchContacts.pending, addContact.pending, deleteContact.pending), state => {
-        state.contacts.loading = true,
-        state.contacts.error = false
-      })
-      .addMatcher(isAnyOf(fetchContacts.rejected, addContact.rejected, deleteContact.rejected), state => {
-        state.contacts.error = true,
-        state.contacts.loading = false
-      })
-      .addMatcher(isAnyOf(fetchContacts.fulfilled, addContact.fulfilled, deleteContact.fulfilled), state => {
-        state.contacts.loading = false
-      })
+      .addMatcher(
+        isAnyOf(fetchContacts.pending, addContact.pending, deleteContact.pending),
+        (state) => {
+          (state.contacts.loading = true), (state.contacts.error = false)
+        }
+      )
+      .addMatcher(
+        isAnyOf(fetchContacts.rejected, addContact.rejected, deleteContact.rejected),
+        (state) => {
+          (state.contacts.error = true), (state.contacts.loading = false)
+        }
+      )
+      .addMatcher(
+        isAnyOf(fetchContacts.fulfilled, addContact.fulfilled, deleteContact.fulfilled),
+        (state) => {
+          state.contacts.loading = false
+        }
+      )
   }
 })
 

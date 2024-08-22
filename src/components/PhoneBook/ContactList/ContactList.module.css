@@ -1,13 +1,19 @@
-.list {
+.no_contacts_list {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 2px;
-  border: 1px solid rgb(128, 127, 127);
-  background-color: rgb(218, 217, 217);
   padding: 15px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color:rgba(128, 127, 127, 0.444);
+  border-radius: 3px;
 }
 
 .item {
@@ -19,6 +25,7 @@
   max-width: 220px;
   width: 100%;
   background-color: #fff;
+  margin: 0 auto;
 }
 
 .stub {

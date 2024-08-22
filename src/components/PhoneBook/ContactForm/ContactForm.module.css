@@ -25,7 +25,7 @@
   transition: all ease 0.1s;
   
     &:hover {
-      background-color: #c4c4c4;
+      background-color: rgba(204, 240, 204, 0.685);
     }
 
     &:active {

@@ -7,6 +7,20 @@
   display: flex;
 }
 
+.forUse{
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.toLogin {
+  font-size: 18px;
+  color: rgb(44, 110, 138);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .screen{
   border-radius: 5px;
   border: 2px solid black;

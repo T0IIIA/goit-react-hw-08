@@ -7,11 +7,6 @@ import { nanoid } from '@reduxjs/toolkit';
 
 
 
-
-
-
-
-
 const ContactForm = () => {
   const dispatch = useDispatch()
 
@@ -19,8 +14,8 @@ const ContactForm = () => {
   const fieldIdNumber = nanoid(6)
 
   const inputRules = Yup.object({
-    name: Yup.string().required('This field is required!').min(3).max(50),
-    number: Yup.string().required('This field is required!').min(3).max(50)
+    name: Yup.string().required('name is required!').min(3).max(50),
+    number: Yup.string().required('number is required!').min(3).max(50)
   })
 
   const initialValues = {

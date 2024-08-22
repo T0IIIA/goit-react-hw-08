@@ -1,6 +1,9 @@
 .container {
 display: flex;
+justify-content: center;
+align-items: center;
 gap: 15px;
+
 }
 
 .link {
@@ -11,6 +14,27 @@ gap: 15px;
   &:hover{
     color: rgba(204, 240, 204, 0.685);
   }
+}
 
+.logout_btn {
+  color: #ffffff;
+  background-color: transparent;
+  height: 100%;
+  padding: 0 10px;
+  margin-left: 15px;
+  border: none ;
+  border-left: solid 2px #ffffff7a;
+  border-right: solid 2px #ffffff7a;
+  transition: all ease 0.2s;
 
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: scale(1);
+    color: rgb(255, 106, 106);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
 }

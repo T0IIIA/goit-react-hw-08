@@ -24,17 +24,19 @@
 }
 
 .backLink {
-  font-size: 20px;
+  color: rgb(87, 87, 87);
+  font-size: 15px;
   transition: all ease 0.08s;
   border-radius: 5px;
   overflow: hidden;
   padding: 2px;
   position: relative;
   top: 5px;
-  left: -110px;
+  left: -95px;
 
   &:hover {
-    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
   }
 }
 
@@ -65,13 +67,28 @@
 
   
     &:hover {
-      background-color: #c4c4c4;
+     background-color: rgba(204, 240, 204, 0.685);
     }
 
     &:active {
       box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     }
 }
+
+.answer {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #868686;
+}
+
+.signUp {
+  color: black;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
 
 .error {
   color: red;

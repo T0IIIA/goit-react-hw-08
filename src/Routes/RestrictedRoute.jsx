@@ -7,7 +7,7 @@ const RestrictedRoute = ({ children }) => {
   const location = useLocation()
 
   if (isLoggedIn) {
-    return <Navigate to={location} />
+    return <Navigate to={location?.state ?? '/'} />
   }
   return children
 }

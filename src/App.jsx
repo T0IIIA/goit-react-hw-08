@@ -6,11 +6,21 @@ import LoginPage from './pages/LoginPage/LoginPage.jsx'
 import ContactsPage from './pages/ContactsPage/ContactsPage.jsx'
 import RestrictedRoute from './Routes/RestrictedRoute.jsx'
 import PrivateRoute from './Routes/PrivateRoute.jsx'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { refreshUserThunk } from './redux/auth/operations.js'
+import { selectIsRefreshing } from './redux/auth/selectors.js'
+import Loader from './components/Loader/Loader.jsx'
 
 const App = () => {
+  const dispatch = useDispatch()
+  const isRefreshing = useSelector(selectIsRefreshing)
+  useEffect(() => {
+    dispatch(refreshUserThunk())
+  }, [dispatch])
 
-
-  return (
+  return isRefreshing ? <Loader /> :  (
     <>
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -33,6 +43,7 @@ const App = () => {
             </RestrictedRoute>
           }
         />
+
         <Route
           path='/register'
           element={
@@ -41,6 +52,7 @@ const App = () => {
             </RestrictedRoute>
           }
         />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>
   )
